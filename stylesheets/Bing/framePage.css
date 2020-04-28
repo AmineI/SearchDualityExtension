@@ -1,6 +1,6 @@
 /*#region Header*/
 
-body, #b_header {
+body, #b_header, #id_phead {
     min-width: 0;
 }
 
@@ -15,7 +15,7 @@ body, #b_header {
 
 /* Header icons such as profile & MS Rewards */
 #id_h {
-    left: -20%;
+    left: -25%;
 }
 
 /*Search modes (to choose between "All, Pictures, News,...") */
@@ -24,6 +24,9 @@ nav.b_scopebar {
     visibility: hidden;
 }
 
+.b_poleContent {/*Additional suggestions on top, related to the query*/
+    width: auto;
+}
 /*#endregion*/
 
 /*region Results*/
