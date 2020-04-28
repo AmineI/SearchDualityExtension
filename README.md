@@ -1,7 +1,7 @@
 #### Two search engines are better than one.
 
-Displays another search engine's results next to your original search - 
-Another take on the concept originally found in the [_Google Bing Duality_][Google Bing Duality] extension (that is currently obsolete).
+Extension that displays another search engine's results next to your original search - 
+Another take on the concept originally found in the [_Google Bing Duality_][Google Bing Duality] extension (currently obsolete and not working anymore sadly).
 
   
 Search on Google, and see Bing results next to the Google results.
