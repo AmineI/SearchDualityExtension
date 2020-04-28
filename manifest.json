@@ -1,7 +1,7 @@
 {
   "manifest_version": 2,
   "name": "Search Duality",
-  "description": "Two search engines are better than one. Displays another search engine's results next to your original search - Another take on the concept originally found in the 'Google Bing Duality' extension",
+  "description": "Two search engines are better than one. Displays another search engine's results next to your original search",
   "version": "1.3",
   "icons": {
     "16": "icons/icon16.png",
