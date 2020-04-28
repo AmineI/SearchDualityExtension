@@ -1,0 +1,114 @@
+
+/*region Hosted Frame Setup */
+#gsr { /* Body id of the google search results page.*/
+    position: relative; /*Needed to make the iframe take the whole page height*/
+}
+
+#dual-search-frame {/*We make the frame take the whole page height and half the width*/
+    position: absolute;
+    overflow: visible;
+    right: 0;
+    top: 0;
+    width: 45%;
+    height: 100%;
+    border-width: 0;
+    z-index: 100;
+}
+/*endregion*/
+
+/*region Search Bar*/
+
+/*#searchform is a container for the search bar
+it has a white div fixed on top of the page
+This white div contains button such as the login button, but is mostly empty otherwise.
+except .sfbg elements which are also empty styling divs, they should not block clicks to the underlying page (ie the search frame)
+We disable the pointer events for these. */
+#searchform {
+    pointer-events: none;
+}
+#searchform > *:not(.sfbg) {
+    pointer-events: all;
+}
+
+#tsf {/*Another container for the search bar*/
+    max-width: 100%;
+}
+
+.A8SBwf {/*Yet another container for the search bar*/
+    margin: 0 !important;
+    max-width: 55%;
+    min-width: 28%;
+}
+
+.RNNXgb {/*Search bar*/
+    width: auto !important;
+}
+/*endregion*/
+
+/*region Headers*/
+
+/*Container div for the navigation bar (search modes and some empty divs used for styling)*/
+#top_nav {
+    min-width: unset !important;
+    /*The various styling divs are above the search frame, so we disable clicks for these. We enable clicks only for the interactable elements in #hdtb-msb*/
+    pointer-events: none;
+}
+
+/*Styling div in the navigation bar to add a white background*/
+#hdtbSum {
+    /*It hides some elements from the added search frame, so we remove that background.*/
+    background: none !important;
+}
+
+/*Container of the interactable elements. (search modes, settings, tools,..) */
+#hdtb-msb, #hdtbMenus {
+    min-width: 0 !important;
+    pointer-events: all; /*We make them interactable - since we disabled pointer events for one of its container we have to specify this*/
+}
+
+/*search modes divs container, with "All", "Images", "News",..*/
+#hdtb-msb-vis {
+    margin-left: 0 !important;
+}
+
+/*This is a styling div only used to add a left padding to the "tools" menu. We hide it.*/
+#XJDHvf {
+    display: none;
+}
+
+#appbar/*Search "Tools" bar */
+{
+    min-width: 0 !important;
+}
+
+
+/*endregion*/
+
+/*region Search Content */
+#rcnt /* Search Results*/
+{
+    left: -140px !important;
+    min-width: 0 !important;
+    width: 50% !important;
+}
+
+/*div#center_col {margin-left: 20px !important;}*/
+
+#rhs { /*Additional search suggestions on the right, such as details about a product you searched for. ex "Github"*/
+    display: none;
+}
+
+
+/*endregion*/
+
+/*region Footer */
+#cnt,
+#fbar, /*Footer*/
+#searchform {
+    min-width: 0 !important;
+}
+
+.B4GxFc { /*Text in the footer*/
+    margin-left: 0 !important;
+}
+/*endregion*/

@@ -1,0 +1,37 @@
+{
+  "manifest_version": 2,
+  "name": "Search Duality",
+  "description": "Two search engines are better than one. Displays another search engine's results next to your original search - Another take on the concept originally found in the 'Google Bing Duality' extension",
+  "version": "1.3",
+  "icons": {
+    "16": "icons/icon16.png",
+    "32": "icons/icon32.png",
+    "128": "icons/icon128.png"
+  },
+  "permissions": [
+    "*://www.google.com/",
+    "*://www.bing.com/"
+  ],
+  "content_scripts": [
+    {//Google search pages
+      "matches": ["*://www.google.com/search*"],
+      //Except the Image search ones
+      "exclude_globs": ["*tbm=isch*"],
+      //Add the frame once DOM is loaded but before rendering.
+      "run_at": "document_end",
+      "js": ["util/util.js",//We inject our util file first to make our functions available to our other content scripts
+        "content-scripts/Google/SearchDuality.js"]
+    },
+    {//Bing frames
+      "matches": ["*://*.bing.com/search*"],
+      "run_at": "document_end",
+      "js": ["util/util.js",//We inject our util file first to make our functions available to our other content scripts
+        "content-scripts/Bing/SearchDuality.js"],
+      //We want to inject into any bing iframe.
+      "all_frames": true
+    }
+  ],
+  "web_accessible_resources": [
+    "stylesheets/*"
+  ]
+}

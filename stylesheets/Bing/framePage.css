@@ -1,0 +1,69 @@
+/*#region Header*/
+
+body, #b_header {
+    min-width: 0;
+}
+
+/*Hides bing search box, to only display the host search engine's*/
+.b_searchboxForm {
+    display: none;
+    /* We would have to at least do this if we don't want to hide it :
+    width: auto;
+    margin-right: 0 !important;
+    padding-right: 0 !important;*/
+}
+
+/* Header icons such as profile & MS Rewards */
+#id_h {
+    left: -20%;
+}
+
+/*Search modes (to choose between "All, Pictures, News,...") */
+nav.b_scopebar {
+    /* We hide them to avoid confusions and keep the user on his host engine instead of being redirected to a full bing page */
+    visibility: hidden;
+}
+
+/*#endregion*/
+
+/*region Results*/
+/*Results list has an additional padding that is unneeded in such a situation with a smallframe*/
+#b_content {
+    padding-left: 0;
+}
+
+/*Results list is sometimes too large (fixed width) and need resizing to fit the frame*/
+#b_results {
+    max-width: 100%;
+}
+
+/*Results with sub-lists (For example, when searching "Stackoverflow", sub-results like "login","ask question" appear below the first result.
+They need resizing when the frame is not large enough.*/
+#b_results .b_algo .b_vlist2col.b_deep ul,
+#b_results .b_algo .b_vlist2col.b_deep h3 {
+    width: auto !important;
+}
+
+/*endregion*/
+
+/*region Footer*/
+
+#b_results > .b_ans, /*Bing search suggestions*/
+#b_results > .b_pag /*Bing navigation (to get to next pages)*/
+{
+    /*Clicking on such links replaces the host search engine, Google for example, by a full page of the clicked link.*/
+    /*We hide them, to prevent confusion - we want to keep the initial search engine and have bing next to it, and not be redirected to a full bing page. */
+    display: none;
+}
+
+/*This context element adds wikipedia information about the search. Its width was fixed however */
+#b_context {
+    width: auto;
+}
+
+/*Feedback button below the Footer, making the frame too long*/
+#fbtop {
+    display: none;
+}
+
+/*endregion*/
